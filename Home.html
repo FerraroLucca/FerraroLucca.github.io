@@ -5,8 +5,13 @@
         <link rel="icon" type="image/x-icon" href="Artes/Cangas.jpg">
         <title> Cangas Painting </title>
         <meta charset="utf-8">
-        <h1 style="text-align: center;"> Cangas Painting </h1>
+        <h1 id="mytitle"> Cangas Painting </h1>
         <style>
+                #mytitle{
+                    color: black;
+                    background-color: rgb(250,180,10);
+                    text-align: center;
+                }
                 a:link {
                     color: black;
                     background-color: transparent;
@@ -27,15 +32,28 @@
                     background-color: transparent;
                     text-decoration: underline;
                     }
+                #ConteudoFooter{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                #Contatos{
+                    text-align: left;
+                }
+                #RedesSociais{
+                    text-align: center;
+                }
+                #FormasPagamento{
+                    text-align: right;
+                }
         </style>
     </head>
-    
+
     <body style="background-color:rgb(100,100,100);">
         
         <center>
                <img src="Artes/canguinhas.jpg" alt="cangas" width="400" height=200">
         </center>
-                                                       
+                                      
         <div>
             <center>
               <h2><a href="História.html"> História  </h2></a>
@@ -46,16 +64,23 @@
 
     </body>
     <foot>
-        <div>
-            Contatos:<br>
-            Entre em contato<br>
-            WhatsApp: (11) 98765-8967<br>
-            Fixo: (11) 5589-6785<br>
-            E-mail: contato@cangas.com.br<br>
-            Redes sociais<br>
-            *Adicionar icones*<br>
-            Formas de pagamento<br>
-            *Adicinar icones*<br>
+        <div id="ConteudoFooter">
+            <div id="Contatos">
+                Entre em contato:<br>
+                WhatsApp: (11)98765-8967<br>
+                Fixo: (11)5589-6785<br>
+                E-mail: contato@cangas.com.br<br>
+            </div>
+
+            <div id="RedesSociais">
+                Redes sociais:<br>
+                *Adicionar icones*<br>
+            </div>
+            
+            <div id="FormasPagamento">    
+                Formas de pagamento<br>
+                *Adicinar icones*<br>
+            </div>
         </div>
     </foot>
 
