@@ -171,7 +171,7 @@
             /* Caso ainda falte alguns litros */
             if (litros > 0) {
                 /* Se forem necessários até 3 galões de 4 litros (75 reais) */
-                if (litros % 18 <= 12) {
+                if (litros <= 12) {
                     /* Calcula quantos galões de 4 litros, arredondado para cima */
                     galao4Qnt = Math.ceil(litros / 4)
                 } else {
