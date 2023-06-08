@@ -1,91 +1,86 @@
 <!DOCTYPE HTML>
 
 <html>
-    <link rel="icon" type="image/x-icon" href="Artes/Cangas.png">
-    <meta charset="utf-8">
-    <style>
-        #mytitle{
-            color: black;
-            background-color: transparent;
-            text-align: center;
-        }
-        #navegacao{
-            background-color: rgb(255,182,51);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 0 10%; }
-        
-        a:link{
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-        a:hover{
-            color: black;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-        a:active{
-            color: pink;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-    </style>
-    
     <head>
+        <link rel="icon" type="image/x-icon" href="Artes/Cangas.png">
+        <meta charset="utf-8">
         <title> Orçamento </title>
         <meta charset="utf-8">
         <h1 style="text-align: center;"> Orçamento </h1>
         <style>
-                a:link {
-                    color: black;
-                    background-color: transparent;
-                    text-decoration: none;
-                    }
-                a:visited {
-                    color: pink;
-                    background-color: transparent;
-                    text-decoration: none;
-                    }
-                a:hover {
-                    color: red;
-                    background-color: transparent;
-                    text-decoration: underline;
-                    }
-                a:active {
-                    color: pink;
-                    background-color: transparent;
-                    text-decoration: underline;
-                    }
-
-                #calculo {
-                    text-align: center;
-                    width: 100%;
-                }
-
-                #calculo input {
-                    padding: 5px;                    
-                    margin-top: 10px;
-                    border-radius: 5px;
-                    }
-
-                #calculo label {
-                    text-align: center;
-                    }
-
-                #calculo button {
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                    padding: 10px;
-                    text-align: center;
-                    border-radius: 15px;
-                    background: #ffffff;
-}
+            body {
+                background-color:rgb(100,100,100);
+            }
+            #mytitle{
+                color: black;
+                background-color: transparent;
+                text-align: center;
+            }
+            #navegacao{
+                background-color: rgb(255,182,51);
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 10%; }
+            
+            a:link{
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:hover{
+                color: black;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:active{
+                color: pink;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:link {
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited {
+                color: pink;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:hover {
+                color: red;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:active {
+                color: pink;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            #calculo {
+                text-align: center;
+                width: 100%;
+            }
+            #calculo input {
+                padding: 5px;                    
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+            #calculo label {
+                text-align: center;
+            }
+            #calculo button {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 10px;
+                text-align: center;
+                border-radius: 15px;
+                background: #ffffff;
+            }
         </style>
     </head>
 
-    <body style="background-color:rgb(100,100,100);">
-
+    <body>
         <div id="calculo">
             <label for="metrosquadrados">Insira altura da sua parede</label><br>
             <input type="number" id="altura" size="2" /><br>
@@ -95,21 +90,21 @@
             <button type="submit" onclick="Orcamento()">Calcular</button>
             <div id="orcamentoCalculado"></div>
         </div>       
-
-        
-
         <div>
           <p style="text-align: center";><a href="Home.html"> Home  </p></a>
           <p style="text-align: center";><a href="História.html"> História </p></a>
           <p style="text-align: center";><a href="Portifólio.html">  Portifólio </p></a>
         </div>
-    </head>
-    
-    <body style="background-color:rgb(100,100,100);">
-        
     </body>
 
     <script>
+        /*
+            Preços:
+            
+            - Galão de 18 litros:   80 reais
+            - Galão de 4 litros:    25 reais
+
+        */
         function Orcamento() {
             var alturaId = document.getElementById("altura");
             var alturaParede = alturaId.value;
@@ -117,41 +112,59 @@
             var larguraId = document.getElementById("largura");
             var larguraParede = larguraId.value;
 
+            const elementoOrcamentoCalculado = document.getElementById("orcamentoCalculado");
+
             var metro = larguraParede * alturaParede;
+
+            if (metro <= 0) {
+                return
+            }
+
             var litros = metro / 6;
+            var totalLitros = litros;
 
-            console.log(metro)
+            /* Calcula quantos galões de 18 litros, arredondado para baixo */
+            let galao18Qnt = Math.floor(litros / 18)
+            let galao4Qnt = 0
 
-            if(litros <=4) {
-                var elementoOrcamentoCalculado = document.getElementById("orcamentoCalculado");
-                var orcamentoCalculado = "Será necessário " + litros + " litros de tinta, É necessário comprar 1 galão de 4 litros <br> Valor total: 25 reais";
-                elementoOrcamentoCalculado.innerHTML = orcamentoCalculado;
-            }
-            
-            if (litros > 4 && litros <= 18) {
-                var galao = litros / 4;
-                if (litros%4 > 0) {
-                    galao = galao + 1;
+            /* Desconta os galões de 18 litros */
+            litros -= galao18Qnt * 18
 
-                    var valor = galao * 25;
-                    var elementoOrcamentoCalculado = document.getElementById("orcamentoCalculado");
-                    var orcamentoCalculado = "Será necessário " + litros + " litros de tinta, É necessário comprar " + galao + " galões de 4 litros cada <br> Valor total: " + valor + " reais";
-                    elementoOrcamentoCalculado.innerHTML = orcamentoCalculado;
+            /* Caso ainda falte alguns litros */
+            if (litros > 0) {
+                /* Se forem necessários até 3 galões de 4 litros (75 reais) */
+                if (litros % 18 <= 12) {
+                    /* Calcula quantos galões de 4 litros, arredondado para cima */
+                    galao4Qnt = Math.ceil(litros / 4)
+                } else {
+                    galao18Qnt += 1
                 }
-                
+            }
+            let valorTotal = (galao18Qnt * 80) + (galao4Qnt * 25)
+
+            if (galao4Qnt) {
+                var galao = galao4Qnt > 1 ? "galões" : "galão"
+                var galao4Mensagem = `${galao4Qnt} ${galao} de 4 litros`
+                if (galao18Qnt) {
+                    galao4Mensagem += " e "
+                }
+            }
+            if (galao18Qnt) {
+                var galao = galao18Qnt > 1 ? "galões" : "galão"
+                var galao18Mensagem = `${galao18Qnt} ${galao} de 18 litros`
             }
 
-            if (litros > 18) {
-                var lata = litros / 18;
-                
+            var orcamentoCalculado = `Quantidade de tinta necessária: ${totalLitros.toFixed(2)} litro(s).`
+            orcamentoCalculado += "<br>Necessário comprar "
+
+            if (galao4Mensagem !== undefined) {
+                orcamentoCalculado += galao4Mensagem
             }
-
-            
-
-            
+            if (galao18Mensagem !== undefined) {
+                orcamentoCalculado += galao18Mensagem
+            }
+            orcamentoCalculado += `<br> Valor total: R$ ${valorTotal}`
+            elementoOrcamentoCalculado.innerHTML = orcamentoCalculado;
         }
-  
-
     </script>
-
 </html>
