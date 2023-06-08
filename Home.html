@@ -5,56 +5,89 @@
         <link rel="icon" type="image/x-icon" href="Artes/Cangas.png">
         <title> Cangas Painting </title>
         <meta charset="utf-8">
-        <h1 id="mytitle"> Cangas Painting </h1>
         <style>
-                #mytitle{
-                    color: black;
-                    background-color: rgb(255,182,51);
-                    text-align: center;
-                }
-                a:link {
-                    color: black;
-                    background-color: transparent;
-                    text-decoration: none;
-                    }
-                a:visited {
-                    color: pink;
-                    background-color: transparent;
-                    text-decoration: none;
-                    }
-                a:hover {
-                    color: rgb(255,182,51);
-                    background-color: transparent;
-                    text-decoration: underline;
-                    }
-                a:active {
-                    color: pink;
-                    background-color: transparent;
-                    text-decoration: underline;
-                    }
-                #ConteudoFooter{
-                    background-color: rgb(255,182,51);
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    padding: 0 10%;
-                }
-                 #Contatos{
-                    align-items: center;
-                    text-align: left;
-                    }
-                #RedesSociais{
-                    align-items: center;
-                    text-align: center;
-                    }
-                #FormasPagamento{
-                    align-items: center;
-                    text-align: right;
-                    }
+            * {
+                margin: 0;
+            }
+            body {
+                background-color:rgb(100,100,100);
+            }
+            .header {
+                display: flex;
+                justify-content: center;
+                background-color: rgb(255,182,51);
+                margin-bottom: 1%;
+            }
+            .header img {
+                margin-right: 1%;
+            }
+            h2 {
+                margin-bottom: 1%;
+            }
+            #mytitle {
+                color: black;
+                text-align: center;
+            }
+            a:link {
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited {
+                color: pink;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:hover {
+                color: rgb(255,182,51);
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            a:active {
+                color: pink;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            #ConteudoFooter {
+                position: absolute;
+                bottom: 0;
+                width: 80%;
+                background-color: rgb(255,182,51);
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 10%;
+            }
+            #Contatos {
+                align-items: center;
+                text-align: left;
+            }
+            #RedesSociais {
+                align-items: center;
+                text-align: center;
+            }
+            #FormasPagamento {
+                align-items: center;
+                text-align: right;
+            }
+            #Contatos div, #FormasPagamento img {
+                margin: 2% 1%;
+            }
+            #RedesSociais img {
+                margin: 3% 1%;
+            }
+            foot div label {
+                position: absolute;
+                margin-top: 0.25%;
+                margin-left: 0.25%;
+            }
         </style>
     </head>
 
-    <body style="background-color:rgb(100,100,100);">
-        
+    <body>
+        <div class="header">
+            <img src="Artes/Cangas.png" alt="logo" width="32">
+            <h1 id="mytitle">Cangas Painting</h1>
+        </div>
         <div>
             <center>
               <h2><a href="História.html"> História  </h2></a>
@@ -62,34 +95,40 @@
               <h2><a href="Orçamento.html"> Orçamento </h2></a>
             </center>
         </div>
-        
-    </body>
-    <foot>
-        <div id="ConteudoFooter">
-            <div id="Contatos">
-                Entre em contato:<br>
-                <img src="Artes/WhatsApp icon.png" alt="WhatsApp" width="25"> (11)98765-8967<br>
-                <img src="Artes/Phone icon.png" alt="Telefone" width="25"> (11)5589-6785<br>
-                <img src="Artes/Email icon.png" alt="E-mail" width="25"> contato@cangas.com.br<br>
-            </div>
-
-            <div id="RedesSociais">
-                Redes sociais:<br>
-                <img src="Artes/facebook icon.png" alt="Facebook" width="25">
-                <img src="Artes/instagram icon.png" alt="Instagram" width="25">
-            </div>
-            
-            <div id="FormasPagamento">    
-                Formas de pagamento<br>
-                <img src="Artes/elo icon.png" alt="Cartão Elo" width="45">
-                <img src="Artes/Mastercard icon.png" alt="Cartão Mastercard" width="45">
-                <img src="Artes/Visa icon.png" alt="Cartão Visa" width="45"><br>
-                <img src="Artes/american icon.png" alt="Cartão American Express" width="35">
-                <img src="Artes/boleto icon.png" alt="Boleto" width="45">
-                <img src="Artes/pix icon.png" alt="PIX" width="35">
+        <foot>
+            <div id="ConteudoFooter">
+                <div id="Contatos">
+                    Entre em contato:<br>
+                    <div>
+                        <img src="Artes/WhatsApp icon.png" alt="WhatsApp" width="28">
+                        <label>(11) 98765-8967</label>
+                    </div>
+                    <div>
+                        <img src="Artes/Phone icon.png" alt="Telefone" width="28">
+                        <label>(11) 5589-6785</label>
+                    </div>
+                    <div>
+                        <img src="Artes/Email icon.png" alt="E-mail" width="28">
+                        <label>contato@cangas.com.br</label>
+                    </div>
+                </div>
+    
+                <div id="RedesSociais">
+                    Redes sociais:<br>
+                    <img src="Artes/facebook icon.png" alt="Facebook" width="32">
+                    <img src="Artes/instagram icon.png" alt="Instagram" width="32">
+                </div>
                 
+                <div id="FormasPagamento">    
+                    Formas de pagamento:<br>
+                    <img src="Artes/elo icon.png" alt="Cartão Elo" width="45">
+                    <img src="Artes/Mastercard icon.png" alt="Cartão Mastercard" width="45">
+                    <img src="Artes/american icon.png" alt="Cartão American Express" width="35"><br>
+                    <img src="Artes/Visa icon.png" alt="Cartão Visa" width="45">
+                    <img src="Artes/boleto icon.png" alt="Boleto" width="45">
+                    <img src="Artes/pix icon.png" alt="PIX" width="35">
+                </div>
             </div>
-        </div>
-    </foot>
-
+        </foot>
+    </body>
 </html>
