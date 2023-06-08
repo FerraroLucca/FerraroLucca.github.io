@@ -2,12 +2,14 @@
 
 <html>
     <head>
-        <link rel="icon" type="image/x-icon" href="Artes/Cangas.png">
-        <meta charset="utf-8">
         <title> Orçamento </title>
         <meta charset="utf-8">
-        <h1 style="text-align: center;"> Orçamento </h1>
+        <link rel="icon" type="image/x-icon" href="Artes/Cangas.png">
+        <link rel="stylesheet" href="/Css/footer.css">
         <style>
+            * {
+                margin: 0;
+            }
             body {
                 background-color:rgb(100,100,100);
             }
@@ -20,8 +22,8 @@
                 background-color: rgb(255,182,51);
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                padding: 0 10%; }
-            
+                padding: 0 10%;
+            }
             a:link{
                 color: black;
                 background-color: transparent;
@@ -81,6 +83,7 @@
     </head>
 
     <body>
+        <h1 style="text-align: center;"> Orçamento </h1>
         <div id="calculo">
             <label for="metrosquadrados">Insira altura da sua parede</label><br>
             <input type="number" id="altura" size="2" /><br>
@@ -95,6 +98,41 @@
           <p style="text-align: center";><a href="História.html"> História </p></a>
           <p style="text-align: center";><a href="Portifólio.html">  Portifólio </p></a>
         </div>
+        <foot>
+            <div id="ConteudoFooter">
+                <div id="Contatos">
+                    Entre em contato:<br>
+                    <div>
+                        <img src="Artes/WhatsApp icon.png" alt="WhatsApp" width="28">
+                        <label>(11) 98765-8967</label>
+                    </div>
+                    <div>
+                        <img src="Artes/Phone icon.png" alt="Telefone" width="28">
+                        <label>(11) 5589-6785</label>
+                    </div>
+                    <div>
+                        <img src="Artes/Email icon.png" alt="E-mail" width="28">
+                        <label>contato@cangas.com.br</label>
+                    </div>
+                </div>
+    
+                <div id="RedesSociais">
+                    Redes sociais:<br>
+                    <img src="Artes/facebook icon.png" alt="Facebook" width="32">
+                    <img src="Artes/instagram icon.png" alt="Instagram" width="32">
+                </div>
+                
+                <div id="FormasPagamento">    
+                    Formas de pagamento:<br>
+                    <img src="Artes/elo icon.png" alt="Cartão Elo" width="45">
+                    <img src="Artes/Mastercard icon.png" alt="Cartão Mastercard" width="45">
+                    <img src="Artes/american icon.png" alt="Cartão American Express" width="35"><br>
+                    <img src="Artes/Visa icon.png" alt="Cartão Visa" width="45">
+                    <img src="Artes/boleto icon.png" alt="Boleto" width="45">
+                    <img src="Artes/pix icon.png" alt="PIX" width="35">
+                </div>
+            </div>
+        </foot>
     </body>
 
     <script>
