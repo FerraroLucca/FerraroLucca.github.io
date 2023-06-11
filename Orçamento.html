@@ -11,55 +11,48 @@
                 margin: 0;
             }
             body {
-                background-color:rgb(100,100,100);
+                background-color: #202020;
             }
             #mytitle{
                 color: black;
-                background-color: transparent;
+                background-color: rgb(255,182,51);
                 text-align: center;
             }
-            #navegacao{
+            #navegação{
                 background-color: rgb(255,182,51);
                 display: grid;
+                text-align: center;
                 grid-template-columns: repeat(3, 1fr);
-                padding: 0 10%;
+                padding: 0.5%;
             }
             a:link{
                 color: black;
                 background-color: transparent;
                 text-decoration: none;
             }
-            a:hover{
-                color: black;
-                background-color: transparent;
-                text-decoration: underline;
-            }
-            a:active{
-                color: pink;
-                background-color: transparent;
-                text-decoration: underline;
-            }
             a:link {
-                color: black;
-                background-color: transparent;
-                text-decoration: none;
-            }
-            a:visited {
-                color: pink;
+                color: #202020;
                 background-color: transparent;
                 text-decoration: none;
             }
             a:hover {
-                color: red;
+                color: #202020;
                 background-color: transparent;
                 text-decoration: underline;
+            }
+            a:visited {
+                color: #202020;
+                background-color: transparent;
+                text-decoration: none;
             }
             a:active {
-                color: pink;
+                color: purple;
                 background-color: transparent;
                 text-decoration: underline;
             }
-            #calculo {
+            #calculo{
+                margin-top: 5%;
+                color: rgb(255,182,51);
                 text-align: center;
                 width: 100%;
             }
@@ -83,7 +76,12 @@
     </head>
 
     <body>
-        <h1 style="text-align: center;"> Orçamento </h1>
+        <h1 id="mytitle"> Orçamento </h1>
+        <div id="navegação">
+          <h2 style="text-align: center";><a href="Home.html"> Home  </h2></a>
+          <h2 style="text-align: center";><a href="História.html"> História </h2></a>
+          <h2 style="text-align: center";><a href="Portifólio.html">  Portifólio </h2></a>
+        </div>
         <div id="calculo">
             <label for="metrosquadrados">Insira altura da sua parede</label><br>
             <input type="number" id="altura" size="2" /><br>
@@ -92,11 +90,6 @@
             <input type="number" id="largura" size="2" /><br>
             <button type="submit" onclick="Orcamento()">Calcular</button>
             <div id="orcamentoCalculado"></div>
-        </div>       
-        <div>
-          <p style="text-align: center";><a href="Home.html"> Home  </p></a>
-          <p style="text-align: center";><a href="História.html"> História </p></a>
-          <p style="text-align: center";><a href="Portifólio.html">  Portifólio </p></a>
         </div>
         <foot>
             <div id="ConteudoFooter">
